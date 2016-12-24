@@ -7,17 +7,17 @@
 #include <iomanip>
 
 using namespace std;
-/*hacemos la struct;Las estructuras nos permiten agrupar varios datos, que mantengan algún tipo de
-relación, aunque sean de distinto tipo, permitiendo manipularlos todos juntos, usando
+/*hacemos la struct;Las estructuras nos permiten agrupar varios datos, que mantengan algÃºn tipo de
+relaciÃ³n, aunque sean de distinto tipo, permitiendo manipularlos todos juntos, usando
 un mismo identificador, o cada uno por separado.
-• Las estructuras son llamadas también muy a menudo registros, o en inglés records.
-Tienen muchos aspectos en común con los registros usados en bases de datos. Y
-siguiendo la misma analogía, cada objeto de una estructura se denomina a menudo
+â€¢ Las estructuras son llamadas tambiÃ©n muy a menudo registros, o en inglÃ©s records.
+Tienen muchos aspectos en comÃºn con los registros usados en bases de datos. Y
+siguiendo la misma analogÃ­a, cada objeto de una estructura se denomina a menudo
 campo, o field.*/
 struct alumno 
 {
 	int codigo;
-	char  nombres[50];
+	char nombres[50];
 	char apellidos[50];
 	char cursos[50];
 	char metodo[50];
@@ -82,9 +82,9 @@ int main ()
             cin>>opcion;
         }
         switch(opcion)
-        {
-        	case 1:
-    				mantenimientoDeProfesores();
+             {  
+        	        case 1:
+    				        mantenimientoDeProfesores();
 					break;
 			case 2: 
 					mantenimientoDeAlumnos();
@@ -110,8 +110,8 @@ void mantenimientoDeAlumnos()
 	char opc = 's';
 	while (opc == 's')
 	{
-		system("cls");
-	    cout << "\n\n";
+        system("cls");
+	cout << "\n\n";
         cout << "\t\t  ====== MANTENIMIENTO DE ALUMNOS ======";
         cout <<"\n\n                                          ";
      	cout << "\n \t\t\t 1. Registrar Alumno";
@@ -131,14 +131,14 @@ void mantenimientoDeAlumnos()
         switch(opcion)
         {
         	case 1: 
-         			crearRegistroAlumno();
-         			break;
+         		crearRegistroAlumno();
+         		break;
          	case 2:
-         			mostrarArchivoAlumno();
-         			break;
-            case 3: 
-         		    editarArchivoAlumno();
-         			break;
+         		mostrarArchivoAlumno();
+         		break;
+                case 3: 
+         		editarArchivoAlumno();
+         		break;
          	case 4: 
          	        buscarArchivoAlumno();
          	        break;
@@ -146,8 +146,8 @@ void mantenimientoDeAlumnos()
                     cout<<"\n\n";
          	 		cout<<"Desea Regresar a MANTENIMIENTO DE ALUMNOS S/N ?\n"<<endl;
                     fflush(stdin);//It's a function which allows you to flush [clear] the input buffer. 
-					cin>>opc;
-					break;
+				cin>>opc;
+				break;
        } 
         
 	}
@@ -177,7 +177,7 @@ void crearRegistroAlumno()
 	//Consistencia de exito de apertura del archivo
     
     if (F == NULL)
-    {
+        {
     	cout<<"No se puede abrir el Archivo"<<endl;
     	exit(1);//(usually) indicates unsucessful termination
 	}
@@ -209,7 +209,7 @@ void mostrarArchivoAlumno()
 		exit(1);
 	}
 	
-	cout<<"========================================\n"<<endl;
+    cout<<"========================================\n"<<endl;
     cout<<"Codigo\tNombre\tApellido\tCurso"<<endl;
     cout<<"----------------------------------------\n"<<endl;
     
@@ -228,7 +228,7 @@ void mostrarArchivoAlumno()
 	fclose(J);
 	
 	cout<<"\n\n";
- system("Pause()");
+        system("Pause()");
 
 }
 void buscarArchivoAlumno()
@@ -250,7 +250,7 @@ void buscarArchivoAlumno()
 		
 	}
 	// aqui siempre debe empezar el ciclo de lectura
-    // y fread() regresa siempre cuantas estructuras leyoñ{ñ-
+    // y fread() regresa siempre cuantas estructuras leyoÃ±{Ã±-
     cout<<"========================================\n"<<endl;
     cout<<"Codigo\tNombre\tApellido\tCurso"<<endl;
     cout<<"----------------------------------------\n"<<endl;
@@ -291,7 +291,7 @@ void editarArchivoAlumno()
 	cin>>codigo;getchar(); // getchar solo te va capturar el primer caracter;
 	//Abriendo, leyendo,cargando estructura;//
 	FF = fopen("datosAlumno.txt","r+"); //  r == abre un fichero para lectura. Si el fichero no existe devuelve error. 
-	                             // + == símbolo utilizado para abrir el fichero para lectura y escritura.
+	                             // + == sÃ­mbolo utilizado para abrir el fichero para lectura y escritura.
     // consistencia de la apertura del archivo;
     
     if (FF == NULL)
@@ -324,7 +324,7 @@ void editarArchivoAlumno()
 			gets(A.apellidos);
 			cout<<"Nuevo Curso ---> ";
 			gets(A.cursos);
-			fwrite(&A, sizeof(A), 1, GG); // fwrite (direcc_dato, tamaño_dato, numero_datos, punt_fichero);
+			fwrite(&A, sizeof(A), 1, GG); // fwrite (direcc_dato, tamaÃ±o_dato, numero_datos, punt_fichero);
 			hallado = 1;
 		}
 		else
@@ -380,14 +380,14 @@ void mantenimientoDeProfesores()
         switch(opcion)
         {
         	case 1: 
-         			crearRegistroProfesor();
-         			break;
+         		crearRegistroProfesor();
+         		break;
          	case 2:
-         			mostrarArchivoProfesor();
-         			break;
-            case 3: 
-         		    editarArchivoProfesor();
-         			break;
+         		mostrarArchivoProfesor();
+         		break;
+                case 3: 
+         	        editarArchivoProfesor();
+         	        break;
          	case 4: 
          	        buscarArchivoProfesor();
          	        break;
@@ -395,9 +395,9 @@ void mantenimientoDeProfesores()
                 cout<<"\n\n";
          		cout<<"Desea Regresar a MANTENIMIENTO DE PROFESORES S/N ?\n"<<endl;
         		fflush(stdin);//It's a function which allows you to flush [clear] the input buffer. 
-				cin>>opc;
+		cin>>opc;
 			         
-       } 
+        } 
         
 	}
 		system("Pause()");
@@ -494,7 +494,7 @@ void buscarArchivoProfesor()
 		exit(1);
 	}
 	// aqui siempre debe empezar el ciclo de lectura
-    // y fread() regresa siempre cuantas estructuras leyoñ{ñ-
+    // y fread() regresa siempre cuantas estructuras leyoÃ±{Ã±-
     cout<<"========================================\n"<<endl;
     cout<<"Codigo\tNombre\tApellido\tCurso a Dictar"<<endl;
     cout<<"----------------------------------------\n"<<endl;
@@ -535,7 +535,7 @@ void editarArchivoProfesor()
 	// abriendo, leyendo y cargando archivo;
 	PP = fopen("datosProfesor.txt","r+");
 	//  r == abre un fichero para lectura. Si el fichero no existe devuelve error.
-	// + == símbolo utilizado para abrir el fichero para lectura y escritura.
+	// + == sÃ­mbolo utilizado para abrir el fichero para lectura y escritura.
     // consistencia de la apertura del archivo;
     if (PP == NULL)
     {
@@ -543,8 +543,8 @@ void editarArchivoProfesor()
     	exit(1);
 	}
 	GG = fopen("Temporales.txt","a+");
-	//a abre un fichero para añadir datos al final del mismo. Si no existe se crea 
-	//+ símbolo utilizado para abrir el fichero para lectura y escritura.
+	//a abre un fichero para aÃ±adir datos al final del mismo. Si no existe se crea 
+	//+ sÃ­mbolo utilizado para abrir el fichero para lectura y escritura.
 	
 	// consistencia del archivo;
 	if (GG == NULL)
@@ -577,11 +577,11 @@ void editarArchivoProfesor()
            // deben utilizar son fread y fwrite.
 			fwrite(&B,sizeof(B),1,GG); 
              //Escribe tantos datos como indique numero de datos en el fichero, tomando los
-             //datos a partir de la dirección del dato.
+             //datos a partir de la direcciÃ³n del dato.
 		}
 		fread(&B,sizeof(B),1,PP);
 		//Lee tantos datos como indique numero de datos del fichero, colocando
-        //los datos leídos a partir de la dirección del dato.
+        //los datos leÃ­dos a partir de la direcciÃ³n del dato.
 	};
 		fclose(PP);
         fclose(GG);
@@ -629,12 +629,12 @@ void mantenimientoDeNotas()
         switch(opcion)
         {
         	case 1: 
-         			registroDeNotas();
-         			break;
+         		registroDeNotas();
+         		break;
         
          	case 2: 
-         			reporteDeNotas();
-         			break;
+         		reporteDeNotas();
+         		break;
          	case 3:		
                     cout<<"\n\n";
          	 		cout<<"Desea Regresar a MANTENIMIENTO DE ALUMNOS S/N ?\n"<<endl;
@@ -662,7 +662,7 @@ void registroDeNotas()
 	cin>>codigo;getchar(); // getchar solo te va capturar el primer caracter;
 	//Abriendo, leyendo,cargando estructura;//
 	FF = fopen("datosAlumno.txt","r+"); //  r == abre un fichero para lectura. Si el fichero no existe devuelve error. 
-	                             // + == símbolo utilizado para abrir el fichero para lectura y escritura.
+	                             // + == sÃ­mbolo utilizado para abrir el fichero para lectura y escritura.
     // consistencia de la apertura del archivo;
     
     if (FF == NULL)
@@ -696,18 +696,18 @@ void registroDeNotas()
 			cout<<"\n\t\t----INGRESE LAS NOTAS-----"<<endl;
     		cout<<"\n";
     		cout<<"Promedio de Practicas: "<<endl;
-    	    cin>>A.pcProm;
+    	        cin>>A.pcProm;
     		cout<<"E.Parcial: "<<endl;
     		cin>>A.ep;
     		cout<<"E.Final: "<<endl;
     		cin>>A.ef;
-			fwrite(&A, sizeof(A), 1, GG); // fwrite (direcc_dato, tamaño_dato, numero_datos, punt_fichero);
+			fwrite(&A, sizeof(A), 1, GG); // fwrite (direcc_dato, tamaÃ±o_dato, numero_datos, punt_fichero);
 			hallado = 1;
 			
 		}
 		else
 		{
-			fwrite(&A,sizeof(A),1,GG);
+		    fwrite(&A,sizeof(A),1,GG);
 		}
 		   fread(&A,sizeof(A),1,FF);
 		
